@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les étudiants pour l'IUT !</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title-italic">Notre Équipe</h1>
+            <h2 class="title-main">Les étudiants pour l'IUT !</h2>
+            <p class="subtitle-instruction">
+                Cliquez sur le nom ou image des membres pour en savoir plus sur eux !
+                <i class="fa-solid fa-hand-pointer click-animation"></i>
+            </p>
+        </header>
+
+        <!-- Titulaires Section -->
+        <section class="section-titulaires">
+            <h3 class="section-title">
+                <i class="fa-solid fa-star"></i> Les titulaires
+            </h3>
+            
+            <div class="candidate-main">
+                <a href="detail.html?personne=lucie" class="candidate-link">
+                    <div class="photo-container">
+                        <img src="images/lucie.jpg" alt="Lucie Gontard" class="photo">
+                    </div>
+                    <div class="name-container">
+                        <p class="firstname">Lucie</p>
+                        <p class="lastname">Gontard</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="candidates-grid">
+                <a href="detail.html?personne=gabriel" class="candidate-link">
+                    <div class="photo-container">
+                        <img src="images/gabriel.jpg" alt="Gabriel Sagot" class="photo">
+                    </div>
+                    <div class="name-container">
+                        <p class="firstname">Gabriel</p>
+                        <p class="lastname">Sagot</p>
+                    </div>
+                </a>
+
+                <a href="detail.html?personne=eva" class="candidate-link">
+                    <div class="photo-container">
+                        <img src="images/eva.jpg" alt="Eva Mauget" class="photo">
+                    </div>
+                    <div class="name-container">
+                        <p class="firstname">Eva</p>
+                        <p class="lastname">Mauget</p>
+                    </div>
+                </a>
+
+                <a href="detail.html?personne=noe" class="candidate-link">
+                    <div class="photo-container">
+                        <img src="images/noe.jpg" alt="Noé Baillarguet" class="photo">
+                    </div>
+                    <div class="name-container">
+                        <p class="firstname">Noé</p>
+                        <p class="lastname">Baillarguet</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Suppléants Section -->
+        <section class="section-suppleants">
+            <h3 class="section-title">
+                <i class="fa-solid fa-users"></i> Les suppléants
+            </h3>
+            
+            <div class="candidates-grid">
+                <a href="detail.html?personne=clemence" class="candidate-link">
+                    <div class="photo-container">
+                        <img src="images/clemence.jpg" alt="Clémence Doucet" class="photo">
+                    </div>
+                    <div class="name-container">
+                        <p class="firstname">Clémence</p>
+                        <p class="lastname">Doucet</p>
+                    </div>
+                </a>
+
+                <a href="detail.html?personne=antoine" class="candidate-link">
+                    <div class="photo-container">
+                        <img src="images/antoine.jpg" alt="Antoine Pollin-Brotel" class="photo">
+                    </div>
+                    <div class="name-container">
+                        <p class="firstname">Antoine</p>
+                        <p class="lastname">Pollin-Brotel</p>
+                    </div>
+                </a>
+
+                <a href="detail.html?personne=juliane" class="candidate-link">
+                    <div class="photo-container">
+                        <img src="images/juliane.jpg" alt="Juliane Doat" class="photo">
+                    </div>
+                    <div class="name-container">
+                        <p class="firstname">Juliane</p>
+                        <p class="lastname">Doat</p>
+                    </div>
+                </a>
+
+                <a href="detail.html?personne=theo" class="candidate-link">
+                    <div class="photo-container">
+                        <img src="images/theo.jpg" alt="Théo Petit" class="photo">
+                    </div>
+                    <div class="name-container">
+                        <p class="firstname">Théo</p>
+                        <p class="lastname">Petit</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Affiche Section -->
+        <section class="section-affiche">
+            <button class="affiche-button" id="afficheButton">
+                <div class="affiche-icon">
+                    <i class="fa-solid fa-file-image"></i>
+                </div>
+                <div class="affiche-content">
+                    <h3 class="affiche-title">Consulter notre affiche</h3>
+                    <p class="affiche-description">Découvrez notre affiche de campagne</p>
+                </div>
+                <div class="affiche-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </button>
+        </section>
+
+        <!-- Nos Engagements Section -->
+        <section class="section-engagements">
+            <a href="engagements.html" class="engagements-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h3 class="card-title">Nos Engagements</h3>
+                <p class="card-description">Découvrez nos propositions concrètes pour améliorer la vie étudiante</p>
+                <div class="card-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </a>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-faq">
+            <h3 class="section-title">
+                <i class="fa-solid fa-circle-question"></i> F.A.Q.
+            </h3>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <strong>Comment voter ?</strong>
+                    </div>
+                    <p class="faq-answer">Cliquez sur le bouton "Vote pour nous !" pour accéder au formulaire de vote officiel.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <strong>Qui peut voter ?</strong>
+                    </div>
+                    <p class="faq-answer">Tous les étudiants de l'IUT de Poitiers inscrits pour l'année en cours.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <strong>Quel est notre rôle ?</strong>
+                    </div>
+                    <p class="faq-answer">Nous représentons les étudiants du site de Niort au conseil de direction et défendons vos intérêts auprès de l'administration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vote Button -->
+        <div class="vote-section">
+            <a href="#" class="vote-button" id="voteButton">
+                <i class="fa-solid fa-check-to-slot"></i> Vote pour nous !
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal pour l'affiche -->
+    <div class="modal-overlay" id="afficheModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img src="images/affiche_IUT.png" alt="Affiche de campagne" class="modal-image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

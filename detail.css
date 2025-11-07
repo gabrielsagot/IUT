@@ -1,0 +1,293 @@
+/* Reset et configuration de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    background-color: #FAF8F3;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px 16px;
+    padding-bottom: 100px;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    margin-bottom: 32px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.back-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.back-button i {
+    font-size: 14px;
+}
+
+/* Profile Card */
+.profile-card {
+    text-align: center;
+    margin-bottom: 48px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.photo-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 40px;
+    border: 5px solid #000;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.profile-name .firstname {
+    font-size: 36px;
+    font-weight: 800;
+    color: #000;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.profile-name .lastname {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c2c2c;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+}
+
+.profile-role {
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    color: #4a4a4a;
+    margin-top: 8px;
+}
+
+.arrow-animation {
+    display: inline-block;
+    animation: arrowAnimation 1.5s ease-in-out infinite;
+    margin-right: 4px;
+}
+
+@keyframes arrowAnimation {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(3px);
+        opacity: 0.7;
+    }
+}
+
+/* About Section */
+.about-section {
+    background-color: #fff;
+    padding: 28px 24px;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+.section-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-title i {
+    font-size: 22px;
+    color: #000;
+}
+
+.bio-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #2c2c2c;
+    text-align: left;
+}
+
+/* Vote Button Section */
+.vote-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(to top,
+        #FAF8F3 0%,
+        rgba(250, 248, 243, 0.98) 70%,
+        rgba(250, 248, 243, 0) 100%
+    );
+    z-index: 1000;
+    animation: fadeInUp 0.6s ease 0.2s backwards;
+}
+
+.vote-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    background-color: #000;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    letter-spacing: 0.3px;
+}
+
+.vote-button i {
+    font-size: 22px;
+}
+
+.vote-button:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    background-color: #1a1a1a;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive - Très petits écrans */
+@media (max-width: 360px) {
+    .profile-photo {
+        width: 160px;
+        height: 160px;
+        border-radius: 32px;
+    }
+
+    .profile-name .firstname {
+        font-size: 30px;
+    }
+
+    .profile-name .lastname {
+        font-size: 26px;
+    }
+
+    .profile-role {
+        font-size: 16px;
+    }
+
+    .about-section {
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .bio-text {
+        font-size: 15px;
+    }
+
+    .vote-button {
+        font-size: 18px;
+        padding: 16px 24px;
+    }
+}
+
+/* Responsive - Écrans moyens */
+@media (min-width: 400px) and (max-width: 480px) {
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+        border-radius: 44px;
+    }
+}
+
+/* Paysage mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .profile-card {
+        margin-bottom: 32px;
+    }
+
+    .about-section {
+        margin-bottom: 24px;
+    }
+
+    .container {
+        padding-bottom: 80px;
+    }
+}
+
+/* Accessibilité - Contraste élevé */
+@media (prefers-contrast: high) {
+    .profile-photo {
+        border-width: 6px;
+    }
+
+    .vote-button {
+        border: 2px solid #000;
+    }
+
+    .back-button {
+        border: 2px solid #000;
+    }
+}

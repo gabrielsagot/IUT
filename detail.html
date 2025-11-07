@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Détail candidat - Les étudiants pour l'IUT !</title>
+    <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html" class="back-button">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Retour</span>
+        </a>
+
+        <!-- Candidate Profile -->
+        <div class="profile-card">
+            <div class="photo-wrapper">
+                <img id="candidate-photo" src="" alt="" class="profile-photo">
+            </div>
+
+            <div class="profile-info">
+                <h1 class="profile-name">
+                    <span id="candidate-firstname" class="firstname"></span>
+                    <span id="candidate-lastname" class="lastname"></span>
+                </h1>
+                <p id="candidate-role" class="profile-role"></p>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2 class="section-title">
+                <i class="fa-solid fa-user"></i>
+                <span id="section-title-text">À propos</span>
+            </h2>
+            <p id="candidate-bio" class="bio-text">
+                Texte de biographie générique qui sera remplacé dynamiquement...
+            </p>
+        </section>
+
+        <!-- Vote Button -->
+        <div class="vote-section">
+            <a href="#" class="vote-button" id="voteButton">
+                <i class="fa-solid fa-check-to-slot"></i> Voter pour nous !
+            </a>
+        </div>
+    </div>
+
+    <script src="detail.js"></script>
+</body>
+</html>
