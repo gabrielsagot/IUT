@@ -337,6 +337,117 @@ body {
     transform: translateX(4px);
 }
 
+/* Nos Projets Section */
+.section-projets {
+    margin-bottom: 48px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #4a4a4a;
+    text-align: center;
+    margin-top: -16px;
+    margin-bottom: 28px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.projets-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projet-card {
+    position: relative;
+    background: #fff;
+    padding: 28px 24px;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.projet-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #000 0%, #2c2c2c 100%);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+}
+
+.projet-card:active {
+    transform: translateX(4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.projet-card:active::before {
+    transform: scaleY(1);
+}
+
+.projet-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 56px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.04);
+    line-height: 1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    user-select: none;
+    pointer-events: none;
+}
+
+.projet-content {
+    position: relative;
+    z-index: 1;
+}
+
+.projet-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.projet-card:active .projet-icon {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projet-icon i {
+    font-size: 26px;
+    color: #FAF8F3;
+}
+
+.projet-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+}
+
+.projet-description {
+    font-size: 15px;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* FAQ Section */
 .section-faq {
     margin-bottom: 40px;
@@ -451,16 +562,8 @@ body {
     font-size: 24px;
 }
 
-/* Grid pour les titulaires (3 colonnes) */
+/* Grid pour les titulaires (2 colonnes) */
 .section-titulaires .candidates-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-}
-
-/* Grid pour les suppléants (2 colonnes) */
-.section-suppleants .candidates-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -470,6 +573,14 @@ body {
     margin-right: auto;
 }
 
+/* Grid pour les suppléants (3 colonnes) */
+.section-suppleants .candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
 .photo-container {
     width: 100%;
     aspect-ratio: 1;
@@ -477,8 +588,8 @@ body {
     margin: 0 auto;
 }
 
-/* Photo plus grande pour les suppléants (2x2) */
-.section-suppleants .photo-container {
+/* Photos plus grandes pour les titulaires (2x2) */
+.section-titulaires .candidates-grid .photo-container {
     max-width: 140px;
 }
 
@@ -518,12 +629,12 @@ body {
     letter-spacing: 0.1px;
 }
 
-/* Names plus grandes pour les suppléants (2x2) */
-.section-suppleants .firstname {
+/* Names plus grandes pour les titulaires (2x2) */
+.section-titulaires .candidates-grid .firstname {
     font-size: 20px;
 }
 
-.section-suppleants .lastname {
+.section-titulaires .candidates-grid .lastname {
     font-size: 16px;
 }
 
@@ -606,31 +717,35 @@ body {
     animation: fadeInUp 0.6s ease 0.35s backwards;
 }
 
-.section-faq {
+.section-projets {
     animation: fadeInUp 0.6s ease 0.4s backwards;
 }
 
+.section-faq {
+    animation: fadeInUp 0.6s ease 0.45s backwards;
+}
+
 .vote-section {
-    animation: fadeInUp 0.6s ease 0.5s backwards;
+    animation: fadeInUp 0.6s ease 0.55s backwards;
 }
 
 /* Optimisation pour très petits écrans */
 @media (max-width: 360px) {
     .section-titulaires .candidates-grid {
-        gap: 12px;
+        gap: 16px;
+        max-width: 280px;
     }
 
-    .section-titulaires .photo-container {
-        max-width: 90px;
-    }
-
-    .section-suppleants .photo-container {
+    .section-titulaires .candidates-grid .photo-container {
         max-width: 120px;
     }
 
     .section-suppleants .candidates-grid {
-        gap: 16px;
-        max-width: 280px;
+        gap: 12px;
+    }
+
+    .section-suppleants .photo-container {
+        max-width: 90px;
     }
 
     .firstname {
@@ -641,11 +756,11 @@ body {
         font-size: 13px;
     }
 
-    .section-suppleants .firstname {
+    .section-titulaires .candidates-grid .firstname {
         font-size: 18px;
     }
 
-    .section-suppleants .lastname {
+    .section-titulaires .candidates-grid .lastname {
         font-size: 15px;
     }
 
@@ -704,25 +819,56 @@ body {
         width: 40px;
         height: 40px;
     }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    .projet-card {
+        padding: 24px 20px;
+    }
+
+    .projet-number {
+        font-size: 48px;
+        top: 16px;
+        right: 16px;
+    }
+
+    .projet-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .projet-icon i {
+        font-size: 24px;
+    }
+
+    .projet-title {
+        font-size: 18px;
+    }
+
+    .projet-description {
+        font-size: 14px;
+    }
 }
 
 /* Optimisation pour écrans moyens */
 @media (min-width: 400px) and (max-width: 480px) {
     .section-titulaires .candidates-grid {
-        gap: 20px;
-    }
-    
-    .section-titulaires .photo-container {
-        max-width: 115px;
-    }
-    
-    .section-suppleants .candidates-grid {
         gap: 24px;
         max-width: 360px;
     }
-    
-    .section-suppleants .photo-container {
+
+    .section-titulaires .candidates-grid .photo-container {
         max-width: 150px;
+    }
+
+    .section-suppleants .candidates-grid {
+        gap: 20px;
+    }
+
+    .section-suppleants .photo-container {
+        max-width: 115px;
     }
 }
 

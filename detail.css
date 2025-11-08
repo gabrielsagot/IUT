@@ -129,7 +129,7 @@ body {
     padding: 28px 24px;
     border-radius: 20px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     animation: fadeInUp 0.6s ease 0.1s backwards;
 }
 
@@ -155,6 +155,185 @@ body {
     text-align: left;
 }
 
+/* Commitments Section */
+.commitments-section {
+    margin-bottom: 40px;
+    animation: fadeInUp 0.6s ease 0.2s backwards;
+}
+
+.commitments-section .section-title {
+    margin-bottom: 24px;
+}
+
+.commitments-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.commitment-card {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    padding: 24px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.commitment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #000 0%, #2c2c2c 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.commitment-card:active::before {
+    transform: scaleX(1);
+}
+
+.commitment-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.commitment-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.commitment-icon-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.commitment-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.commitment-card:active .commitment-icon {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.commitment-icon i {
+    font-size: 22px;
+    color: #FAF8F3;
+}
+
+.commitment-icon-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.commitment-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.commitment-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #4a4a4a;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info-icon:active {
+    transform: scale(1.1);
+    color: #000;
+}
+
+.info-icon i {
+    font-size: 16px;
+}
+
+.commitment-description {
+    font-size: 15px;
+    color: #4a4a4a;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.info-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, margin-top 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.info-panel.active {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.info-text {
+    font-size: 14px;
+    color: #2c2c2c;
+    line-height: 1.6;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    margin: 0;
+    border-left: 3px solid #000;
+}
+
 /* Vote Button Section */
 .vote-section {
     position: fixed;
@@ -168,7 +347,7 @@ body {
         rgba(250, 248, 243, 0) 100%
     );
     z-index: 1000;
-    animation: fadeInUp 0.6s ease 0.2s backwards;
+    animation: fadeInUp 0.6s ease 0.3s backwards;
 }
 
 .vote-button {
@@ -245,6 +424,32 @@ body {
 
     .bio-text {
         font-size: 15px;
+    }
+
+    .commitment-card {
+        padding: 20px 16px;
+    }
+
+    .commitment-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .commitment-icon i {
+        font-size: 20px;
+    }
+
+    .commitment-title {
+        font-size: 17px;
+    }
+
+    .commitment-description {
+        font-size: 14px;
+    }
+
+    .info-text {
+        font-size: 13px;
+        padding: 14px;
     }
 
     .vote-button {
