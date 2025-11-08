@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Une fois le lien de vote disponible, retire cette ligne
         e.preventDefault();
 
+        // Tracking Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'click_vote_button', {
+                'event_category': 'engagement',
+                'event_label': 'Vote pour nous - Page accueil'
+            });
+        }
+
         // Feedback visuel simple
         console.log('Bouton de vote cliqué');
 
@@ -44,6 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Ouvrir la modal
     afficheButton.addEventListener('click', function() {
+        // Tracking Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'view_poster', {
+                'event_category': 'content',
+                'event_label': 'Ouverture affiche de campagne'
+            });
+        }
+
         afficheModal.classList.add('active');
         document.body.style.overflow = 'hidden'; // Empêche le scroll en arrière-plan
     });
@@ -69,4 +85,35 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         }
     });
+
+    // Tracking des clics sur les candidats
+    const candidateLinks = document.querySelectorAll('a[href^="detail.html"]');
+    candidateLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const candidateName = this.querySelector('.firstname')?.textContent + ' ' +
+                                  this.querySelector('.lastname')?.textContent;
+
+            // Tracking Google Analytics
+            if (typeof gtag !== 'undefined' && candidateName) {
+                gtag('event', 'view_candidate', {
+                    'event_category': 'navigation',
+                    'event_label': candidateName
+                });
+            }
+        });
+    });
+
+    // Tracking du clic sur "Nos Engagements"
+    const engagementsLink = document.querySelector('a[href="engagements.html"]');
+    if (engagementsLink) {
+        engagementsLink.addEventListener('click', function(e) {
+            // Tracking Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_engagements', {
+                    'event_category': 'navigation',
+                    'event_label': 'Nos Engagements'
+                });
+            }
+        });
+    }
 });

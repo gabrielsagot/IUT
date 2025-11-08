@@ -285,6 +285,20 @@ function setupVoteButton() {
     voteButton.addEventListener('click', function(e) {
         // Pour l'instant, empêche le comportement par défaut
         e.preventDefault();
+
+        // Récupérer le nom du candidat depuis l'URL
+        const candidateId = getURLParameter('personne');
+        const candidate = candidatesData[candidateId];
+        const candidateName = candidate ? `${candidate.firstname} ${candidate.lastname}` : 'Inconnu';
+
+        // Tracking Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'click_vote_button', {
+                'event_category': 'engagement',
+                'event_label': `Vote pour nous - Page ${candidateName}`
+            });
+        }
+
         console.log('Bouton de vote cliqué depuis la page de détail');
 
         // Une fois le lien disponible, remplace le href du bouton :
