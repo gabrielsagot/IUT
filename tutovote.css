@@ -178,6 +178,27 @@ body {
     margin: 0;
 }
 
+.step-description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.step-description li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.step-description a {
+    color: #4A90E2;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.step-description a:hover {
+    color: #357ABD;
+}
+
 /* Info Section */
 .info-section {
     margin-bottom: 24px;
@@ -226,6 +247,16 @@ body {
     margin: 0;
 }
 
+.info-content a {
+    color: #FFB800;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.info-content a:hover {
+    color: #CC9500;
+}
+
 /* Help Section */
 .help-section {
     margin-bottom: 40px;
@@ -272,6 +303,16 @@ body {
 
 .help-content p {
     margin: 0;
+}
+
+.help-content a {
+    color: #4A90E2;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.help-content a:hover {
+    color: #357ABD;
 }
 
 /* Vote Button Section */
