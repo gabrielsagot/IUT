@@ -32,8 +32,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const question = item.querySelector('.faq-question');
 
         question.addEventListener('click', function() {
+            const isOpening = !item.classList.contains('active');
+            const questionText = question.querySelector('strong').textContent;
+
             // Toggle la classe active sur l'item cliqué
             item.classList.toggle('active');
+
+            // Tracking Google Analytics si la question est ouverte
+            if (isOpening && typeof gtag !== 'undefined') {
+                gtag('event', 'faq_click', {
+                    'event_category': 'engagement',
+                    'event_label': questionText
+                });
+            }
 
             // Optionnel : fermer les autres items pour n'avoir qu'un seul ouvert à la fois
             // Décommentez les lignes ci-dessous si vous voulez ce comportement
@@ -118,4 +129,49 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Tracking du clic sur "Comment voter ?" (grande carte sur index.html)
+    const tutoVoteCard = document.querySelector('.tuto-vote-card');
+    if (tutoVoteCard) {
+        tutoVoteCard.addEventListener('click', function(e) {
+            // Tracking Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_vote_tutorial', {
+                    'event_category': 'navigation',
+                    'event_label': 'Comment voter ? - Depuis page accueil'
+                });
+            }
+        });
+    }
+
+    // Tracking du clic sur petit bouton "Comment voter ?" (sur engagements.html)
+    const tutoVoteButtonSmall = document.querySelector('.tuto-vote-button-small');
+    if (tutoVoteButtonSmall) {
+        tutoVoteButtonSmall.addEventListener('click', function(e) {
+            // Tracking Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_vote_tutorial', {
+                    'event_category': 'navigation',
+                    'event_label': 'Comment voter ? - Depuis page engagements'
+                });
+            }
+        });
+    }
+
+    // Tracking des clics sur les liens dans la FAQ
+    const faqLinks = document.querySelectorAll('.faq-answer a');
+    faqLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const linkText = this.textContent;
+            const linkHref = this.getAttribute('href');
+
+            // Tracking Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'faq_link_click', {
+                    'event_category': 'engagement',
+                    'event_label': `${linkText} - ${linkHref}`
+                });
+            }
+        });
+    });
 });

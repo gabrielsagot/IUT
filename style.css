@@ -614,8 +614,19 @@ body {
     transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
 }
 
+.faq-answer a {
+    color: #4A90E2;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.faq-answer a:hover {
+    color: #357ABD;
+}
+
 .faq-item.active .faq-answer {
-    max-height: 200px;
+    max-height: 300px;
     opacity: 1;
     margin-top: 12px;
 }

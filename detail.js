@@ -301,8 +301,31 @@ function setupVoteButton() {
     });
 }
 
+// Gestion du petit bouton "Comment voter ?"
+function setupTutoVoteButton() {
+    const tutoVoteButton = document.querySelector('.tuto-vote-button-small');
+
+    if (tutoVoteButton) {
+        tutoVoteButton.addEventListener('click', function() {
+            // Récupérer le nom du candidat depuis l'URL
+            const candidateId = getURLParameter('personne');
+            const candidate = candidatesData[candidateId];
+            const candidateName = candidate ? `${candidate.firstname} ${candidate.lastname}` : 'Inconnu';
+
+            // Tracking Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_vote_tutorial', {
+                    'event_category': 'navigation',
+                    'event_label': `Comment voter ? - Depuis page ${candidateName}`
+                });
+            }
+        });
+    }
+}
+
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', function() {
     loadCandidateData();
     setupVoteButton();
+    setupTutoVoteButton();
 });
