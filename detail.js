@@ -282,10 +282,7 @@ function loadCommitments(commitments) {
 function setupVoteButton() {
     const voteButton = document.getElementById('voteButton');
 
-    voteButton.addEventListener('click', function(e) {
-        // Pour l'instant, empêche le comportement par défaut
-        e.preventDefault();
-
+    voteButton.addEventListener('click', function() {
         // Récupérer le nom du candidat depuis l'URL
         const candidateId = getURLParameter('personne');
         const candidate = candidatesData[candidateId];
@@ -299,10 +296,8 @@ function setupVoteButton() {
             });
         }
 
-        console.log('Bouton de vote cliqué depuis la page de détail');
-
-        // Une fois le lien disponible, remplace le href du bouton :
-        // voteButton.href = 'https://lien-vers-le-vote.com';
+        // Le lien redirigera automatiquement vers https://univ-poitiers.legavote.fr
+        console.log('Bouton de vote cliqué depuis la page de détail - Redirection vers le site de vote');
     });
 }
 

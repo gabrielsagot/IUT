@@ -21,6 +21,15 @@ body {
     padding-bottom: 100px;
 }
 
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
 /* Back Button */
 .back-button {
     display: inline-flex;
@@ -35,7 +44,6 @@ body {
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
-    margin-bottom: 32px;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -45,6 +53,38 @@ body {
 }
 
 .back-button i {
+    font-size: 14px;
+}
+
+/* Small Tuto Vote Button */
+.tuto-vote-button-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background-color: #4A90E2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+}
+
+.tuto-vote-button-small:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
+    background-color: #357ABD;
+}
+
+.tuto-vote-button-small i {
+    font-size: 14px;
+}
+
+.tuto-vote-button-small span {
     font-size: 14px;
 }
 

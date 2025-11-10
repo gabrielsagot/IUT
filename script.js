@@ -2,25 +2,27 @@
 document.addEventListener('DOMContentLoaded', function() {
     const voteButton = document.getElementById('voteButton');
 
-    // Quand le lien de vote sera disponible, il suffira de le remplacer ici
-    voteButton.addEventListener('click', function(e) {
-        // Pour l'instant, empêche le comportement par défaut du lien vide
-        // Une fois le lien de vote disponible, retire cette ligne
-        e.preventDefault();
+    voteButton.addEventListener('click', function() {
+        // Détecter la page actuelle pour un tracking précis
+        const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+        let pageLabel = 'Page accueil';
+
+        if (currentPage === 'engagements') {
+            pageLabel = 'Page engagements';
+        } else if (currentPage === 'index' || currentPage === '') {
+            pageLabel = 'Page accueil';
+        }
 
         // Tracking Google Analytics
         if (typeof gtag !== 'undefined') {
             gtag('event', 'click_vote_button', {
                 'event_category': 'engagement',
-                'event_label': 'Vote pour nous - Page accueil'
+                'event_label': `Vote pour nous ! - ${pageLabel}`
             });
         }
 
-        // Feedback visuel simple
-        console.log('Bouton de vote cliqué');
-
-        // Une fois le lien disponible, remplace le href du bouton :
-        // voteButton.href = 'https://lien-vers-le-vote.com';
+        // Le lien redirigera automatiquement vers https://univ-poitiers.legavote.fr
+        console.log(`Bouton de vote cliqué - ${pageLabel} - Redirection vers le site de vote`);
     });
 
     // Gestion de la FAQ accordéon

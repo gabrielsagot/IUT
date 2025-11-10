@@ -28,6 +28,18 @@ body {
     padding-top: 20px;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.logo-universite {
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+
 .title-italic {
     font-size: 32px;
     font-style: italic;
@@ -101,6 +113,104 @@ body {
 
 .section-suppleants {
     margin-bottom: 48px;
+}
+
+/* Comment voter Section */
+.section-tuto-vote {
+    margin-bottom: 32px;
+}
+
+.tuto-vote-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+    padding: 24px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(74, 144, 226, 0.25);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tuto-vote-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.tuto-vote-card:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.tuto-vote-icon {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.tuto-vote-icon i {
+    font-size: 28px;
+    color: #4A90E2;
+}
+
+.tuto-vote-content {
+    flex: 1;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.tuto-vote-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+}
+
+.tuto-vote-description {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+
+.tuto-vote-arrow {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.tuto-vote-arrow i {
+    font-size: 18px;
+    color: #4A90E2;
+}
+
+.tuto-vote-card:active .tuto-vote-arrow {
+    transform: translateX(4px);
 }
 
 /* Affiche Section */
@@ -699,6 +809,10 @@ body {
 
 .header {
     animation: fadeInUp 0.6s ease;
+}
+
+.section-tuto-vote {
+    animation: fadeInUp 0.6s ease 0.05s backwards;
 }
 
 .section-titulaires {
