@@ -308,3 +308,129 @@ body {
         border: 2px solid #000;
     }
 }
+
+/* ========================================
+   OPTIMISATION DESKTOP - NE PAS TOUCHER AU MOBILE
+   ======================================== */
+
+/* Tablettes et petits écrans PC */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 32px 24px;
+    }
+
+    /* Grille 2 colonnes pour les engagements */
+    .engagements-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .vote-section {
+        padding: 20px;
+    }
+
+    .vote-button {
+        max-width: 500px;
+        padding: 20px 40px;
+        font-size: 22px;
+    }
+}
+
+/* Desktop moyen */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+        padding: 40px 32px;
+        padding-bottom: 120px;
+    }
+
+    .nav-buttons {
+        margin-bottom: 40px;
+    }
+
+    .back-button,
+    .tuto-vote-button-small {
+        padding: 14px 24px;
+        font-size: 17px;
+    }
+
+    .header {
+        margin-bottom: 48px;
+    }
+
+    .icon-header {
+        width: 96px;
+        height: 96px;
+    }
+
+    .icon-header i {
+        font-size: 48px;
+    }
+
+    .page-title {
+        font-size: 42px;
+    }
+
+    .page-subtitle {
+        font-size: 19px;
+        max-width: 500px;
+    }
+
+    /* Grille 3 colonnes pour les engagements */
+    .engagements-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-bottom: 48px;
+    }
+
+    .engagement-card {
+        padding: 32px 28px;
+    }
+
+    .engagement-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .engagement-icon i {
+        font-size: 30px;
+    }
+
+    .engagement-title {
+        font-size: 24px;
+    }
+
+    .engagement-description {
+        font-size: 17px;
+    }
+
+    .vote-section {
+        padding: 24px;
+    }
+
+    .vote-button {
+        max-width: 600px;
+    }
+}
+
+/* Grand desktop */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+        padding: 48px 40px;
+        padding-bottom: 140px;
+    }
+
+    .page-title {
+        font-size: 48px;
+    }
+
+    /* Grille 3 colonnes avec cards plus larges */
+    .engagements-list {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

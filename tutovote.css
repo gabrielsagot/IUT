@@ -495,3 +495,134 @@ body {
         padding-bottom: 80px;
     }
 }
+
+/* ========================================
+   OPTIMISATION DESKTOP - NE PAS TOUCHER AU MOBILE
+   ======================================== */
+
+/* Tablettes et petits écrans PC */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 32px 24px;
+    }
+
+    .vote-section {
+        padding: 20px;
+    }
+
+    .vote-button {
+        max-width: 500px;
+        padding: 20px 40px;
+        font-size: 22px;
+    }
+}
+
+/* Desktop moyen */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+        padding: 40px 32px;
+        padding-bottom: 120px;
+    }
+
+    .back-button {
+        padding: 14px 24px;
+        font-size: 17px;
+    }
+
+    .header {
+        margin-bottom: 48px;
+    }
+
+    .icon-header {
+        width: 96px;
+        height: 96px;
+    }
+
+    .icon-header i {
+        font-size: 48px;
+    }
+
+    .page-title {
+        font-size: 42px;
+    }
+
+    .page-subtitle {
+        font-size: 19px;
+        max-width: 500px;
+    }
+
+    /* Notice temporaire plus large */
+    .temporary-notice {
+        padding: 24px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+    }
+
+    /* Grille 2 colonnes pour les étapes */
+    .guide-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        margin-bottom: 40px;
+    }
+
+    .step-card {
+        padding: 32px 28px;
+    }
+
+    .step-title {
+        font-size: 24px;
+    }
+
+    .step-description {
+        font-size: 17px;
+    }
+
+    /* Sections info et aide plus larges */
+    .info-section,
+    .help-section {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-card,
+    .help-card {
+        padding: 28px;
+    }
+
+    .vote-section {
+        padding: 24px;
+    }
+
+    .vote-button {
+        max-width: 600px;
+    }
+}
+
+/* Grand desktop */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+        padding: 48px 40px;
+        padding-bottom: 140px;
+    }
+
+    .page-title {
+        font-size: 48px;
+    }
+
+    .temporary-notice {
+        max-width: 900px;
+    }
+
+    /* Sections encore plus larges */
+    .info-section,
+    .help-section {
+        max-width: 900px;
+    }
+}

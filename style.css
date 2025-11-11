@@ -1026,8 +1026,184 @@ body {
     .photo {
         border-width: 4px;
     }
-    
+
     .vote-button {
         border: 2px solid #000;
+    }
+}
+
+/* ========================================
+   OPTIMISATION DESKTOP - NE PAS TOUCHER AU MOBILE
+   ======================================== */
+
+/* Tablettes et petits écrans PC */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 32px 24px;
+    }
+
+    /* Titulaires : 2 colonnes pour les 4 derniers (Lucie reste seule) */
+    .section-titulaires .candidates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .candidate-main {
+        max-width: 240px;
+        margin: 0 auto 28px;
+    }
+
+    /* Suppléants : 3 colonnes */
+    .section-suppleants .candidates-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .vote-section {
+        padding: 20px;
+    }
+
+    .vote-button {
+        max-width: 500px;
+        padding: 20px 40px;
+        font-size: 22px;
+    }
+}
+
+/* Desktop moyen */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+        padding: 40px 32px;
+        padding-bottom: 120px;
+    }
+
+    .header {
+        margin-bottom: 48px;
+    }
+
+    .logo-universite {
+        max-width: 220px;
+    }
+
+    .title-italic {
+        font-size: 38px;
+    }
+
+    .title-main {
+        font-size: 48px;
+    }
+
+    .subtitle-instruction {
+        font-size: 19px;
+    }
+
+    /* Bouton Comment voter en plus grand */
+    .section-tuto-vote {
+        margin-bottom: 40px;
+    }
+
+    .tuto-vote-card {
+        padding: 28px 24px;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .tuto-vote-title {
+        font-size: 24px;
+    }
+
+    .tuto-vote-description {
+        font-size: 16px;
+    }
+
+    /* Titulaires : Lucie seule, puis 2+2 en dessous */
+    .section-titulaires .candidates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .candidate-main {
+        max-width: 280px;
+        margin: 0 auto 32px;
+    }
+
+    /* Suppléants : 3 sur la même ligne */
+    .section-suppleants .candidates-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Projets en 2 colonnes */
+    .projets-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    /* FAQ plus large */
+    .section-faq {
+        max-width: 800px;
+        margin: 0 auto 48px;
+    }
+
+    /* Vote button fixe mais centré */
+    .vote-section {
+        padding: 24px;
+    }
+
+    .vote-button {
+        max-width: 600px;
+    }
+}
+
+/* Grand desktop */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+        padding: 48px 40px;
+        padding-bottom: 140px;
+    }
+
+    .title-main {
+        font-size: 56px;
+    }
+
+    /* Titulaires : Lucie plus grande, puis 2+2 */
+    .section-titulaires .candidates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .candidate-main {
+        max-width: 320px;
+    }
+
+    /* Suppléants : 3 sur la même ligne avec plus d'espace */
+    .section-suppleants .candidates-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Affiche et engagements centrés */
+    .section-affiche,
+    .section-engagements {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tuto-vote-card {
+        max-width: 800px;
     }
 }
