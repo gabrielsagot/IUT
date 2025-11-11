@@ -91,14 +91,9 @@ const candidatesData = {
         bio: "Active et déterminée, je souhaite contribuer à faire entendre la voix des étudiants dans les décisions importantes de l'IUT. Je m'engage à promouvoir des actions concrètes pour améliorer notre cadre de vie, faciliter notre apprentissage et renforcer l'esprit de communauté au sein de notre établissement.",
         commitments: [
             {
-                icon: "fa-solid fa-user-tie",
-                title: "Suppléante de la déléguée",
-                description: "Première année BUT GEA"
-            },
-            {
-                icon: "fa-solid fa-calendar-days",
-                title: "Gestion de l'emploi du temps",
-                description: "Participation à l'élaboration de la gestion de l'emploi du temps de la classe"
+                icon: "fa-solid fa-comments",
+                title: "Intermédiaire élèves-professeurs",
+                description: "Dialogue et communication entre les élèves et les professeurs sur tout type de questions et sujets, dont l'emploi du temps"
             }
         ]
     },
